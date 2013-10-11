@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
@@ -19,7 +20,7 @@ public class HelpInput implements IText
 	private final transient List<String> lines = new ArrayList<String>();
 	private final transient List<String> chapters = new ArrayList<String>();
 	private final transient Map<String, Integer> bookmarks = new HashMap<String, Integer>();
-	private final static Logger logger = Logger.getLogger("Minecraft");
+	private final static Logger logger = Bukkit.getLogger();
 
 	public HelpInput(final User user, final String match, final IEssentials ess) throws IOException
 	{

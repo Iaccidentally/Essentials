@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 
 
 /**
@@ -31,7 +32,7 @@ public class Economy
 	public Economy()
 	{
 	}
-	private static final Logger logger = Logger.getLogger("Minecraft");
+	private static final Logger logger = Bukkit.getLogger();
 	private static IEssentials ess;
 	private static final String noCallBeforeLoad = "Essentials API is called before Essentials is loaded.";
 	public static final MathContext MATH_CONTEXT = MathContext.DECIMAL128;

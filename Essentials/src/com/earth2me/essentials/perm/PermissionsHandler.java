@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -14,7 +15,7 @@ public class PermissionsHandler implements IPermissionsHandler
 	private transient IPermissionsHandler handler = new NullPermissionsHandler();
 	private transient String defaultGroup = "default";
 	private final transient Plugin plugin;
-	private final static Logger LOGGER = Logger.getLogger("Minecraft");
+	private final static Logger LOGGER = Bukkit.getLogger();
 	private transient boolean useSuperperms = false;
 
 	public PermissionsHandler(final Plugin plugin)

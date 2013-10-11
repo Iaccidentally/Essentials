@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -36,7 +36,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class EssentialsPlayerListener implements Listener
 {
-	private static final Logger LOGGER = Logger.getLogger("Minecraft");
+	private static final Logger LOGGER = Bukkit.getLogger();
 	private final transient IEssentials ess;
 
 	public EssentialsPlayerListener(final IEssentials parent)
@@ -297,7 +297,7 @@ public class EssentialsPlayerListener implements Listener
 			user.setCompassTarget(updateLoc);
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void onPlayerLogin2(final PlayerLoginEvent event)
 	{
@@ -308,7 +308,7 @@ public class EssentialsPlayerListener implements Listener
 		default:
 			return;
 		}
-		
+
 		final String banReason = _("banFormat", _("defaultBanReason"), "Console");
 		event.disallow(Result.KICK_BANNED, banReason);
 	}

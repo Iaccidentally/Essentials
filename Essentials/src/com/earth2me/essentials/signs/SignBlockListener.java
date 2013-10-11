@@ -5,6 +5,7 @@ import com.earth2me.essentials.User;
 import com.earth2me.essentials.utils.FormatUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -18,7 +19,7 @@ import org.bukkit.event.block.*;
 public class SignBlockListener implements Listener
 {
 	private final transient IEssentials ess;
-	private final static Logger LOGGER = Logger.getLogger("Minecraft");
+	private final static Logger LOGGER = Bukkit.getLogger();
 	private final static Material WALL_SIGN = Material.WALL_SIGN;
 	private final static Material SIGN_POST = Material.SIGN_POST;
 

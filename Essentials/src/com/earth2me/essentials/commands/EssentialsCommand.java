@@ -7,6 +7,7 @@ import com.earth2me.essentials.utils.FormatUtil;
 import java.util.List;
 import java.util.Locale;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -18,7 +19,7 @@ public abstract class EssentialsCommand implements IEssentialsCommand
 	private final transient String name;
 	protected transient IEssentials ess;
 	protected transient IEssentialsModule module;
-	protected final static Logger logger = Logger.getLogger("Minecraft");
+	protected final static Logger logger = Bukkit.getLogger();
 
 	protected EssentialsCommand(final String name)
 	{

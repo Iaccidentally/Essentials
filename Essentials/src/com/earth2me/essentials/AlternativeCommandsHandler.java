@@ -4,6 +4,7 @@ import net.ess3.api.IEssentials;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.command.PluginCommandYamlParser;
@@ -12,10 +13,10 @@ import org.bukkit.plugin.Plugin;
 
 public class AlternativeCommandsHandler
 {
-	private static final Logger LOGGER = Logger.getLogger("Minecraft");
 	private final transient Map<String, List<PluginCommand>> altcommands = new HashMap<String, List<PluginCommand>>();
 	private final transient Map<String, String> disabledList = new HashMap<String, String>();
 	private final transient IEssentials ess;
+	private static final Logger LOGGER = Bukkit.getLogger();
 
 	public AlternativeCommandsHandler(final IEssentials ess)
 	{

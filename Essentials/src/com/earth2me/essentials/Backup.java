@@ -7,13 +7,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 
 
 public class Backup implements Runnable
 {
-	private static final Logger LOGGER = Logger.getLogger("Minecraft");
+	private static final Logger LOGGER = Bukkit.getLogger();
 	private transient final Server server;
 	private transient final IEssentials ess;
 	private transient boolean running = false;
