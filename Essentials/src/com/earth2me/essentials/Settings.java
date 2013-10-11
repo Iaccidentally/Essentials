@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.ConfigurationSection;
@@ -25,7 +24,7 @@ import org.bukkit.inventory.ItemStack;
 public class Settings implements net.ess3.api.ISettings
 {
 	private final transient EssentialsConf config;
-	private final static Logger logger = Bukkit.getLogger();
+	private final static Logger logger = Logger.getLogger("Minecraft");
 	private final transient IEssentials ess;
 	private boolean metricsEnabled = true;
 
@@ -652,14 +651,14 @@ public class Settings implements net.ess3.api.ISettings
 	{
 		return config.getBoolean("trade-in-stacks-" + id, false);
 	}
-
+	
 	// #easteregg
 	private boolean economyDisabled = false;
 	public boolean _isEcoDisabled()
 	{
 		return config.getBoolean("disable-eco", false);
 	}
-
+	
 	@Override
 	public boolean isEcoDisabled()
 	{
@@ -1113,7 +1112,7 @@ public class Settings implements net.ess3.api.ISettings
 	{
 		return config.getInt("max-nick-length", 30);
 	}
-
+	
 	// #easteregg
 	public int getMaxUserCacheCount()
 	{

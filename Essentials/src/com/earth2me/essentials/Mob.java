@@ -4,12 +4,12 @@ import static com.earth2me.essentials.I18n._;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 
 
 // Suffixes can be appended on the end of a mob name to make it plural
@@ -54,7 +54,7 @@ public enum Mob
 	MINECART_MOB_SPAWNER("SpawnerMinecart", Enemies.NEUTRAL, EntityType.MINECART_MOB_SPAWNER),
 	ENDERCRYSTAL("EnderCrystal", Enemies.NEUTRAL, EntityType.ENDER_CRYSTAL),
 	EXPERIENCEORB("ExperienceOrb", Enemies.NEUTRAL, EntityType.EXPERIENCE_ORB);
-	public static final Logger logger = Bukkit.getLogger();
+	public static final Logger logger = Logger.getLogger("Minecraft");
 
 	private Mob(String n, Enemies en, String s, EntityType type)
 	{

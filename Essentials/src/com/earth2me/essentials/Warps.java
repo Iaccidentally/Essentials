@@ -10,14 +10,13 @@ import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Server;
 
 
 public class Warps implements IConf, net.ess3.api.IWarps
 {
-	private static final Logger logger = Bukkit.getLogger();
+	private static final Logger logger = Logger.getLogger("Minecraft");
 	private final Map<StringIgnoreCase, EssentialsConf> warpPoints = new HashMap<StringIgnoreCase, EssentialsConf>();
 	private final File warpsFolder;
 	private final Server server;

@@ -129,7 +129,7 @@ public class FakeServer implements Server
 	{
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
-
+	
 	@Override
 	public Player getPlayer(String string)
 	{
@@ -249,7 +249,7 @@ public class FakeServer implements Server
 			@Override
 			public BukkitTask runTaskAsynchronously(Plugin plugin, Runnable r) throws IllegalArgumentException
 			{
-				r.run();
+				r.run();	  	
 				return null;
 			}
 
@@ -262,7 +262,7 @@ public class FakeServer implements Server
 			@Override
 			public BukkitTask runTaskLaterAsynchronously(Plugin plugin, Runnable r, long l) throws IllegalArgumentException
 			{
-				r.run();
+				r.run();	  	
 				return null;
 			}
 
@@ -339,7 +339,7 @@ public class FakeServer implements Server
 	@Override
 	public Logger getLogger()
 	{
-		return Bukkit.getLogger();
+		return Logger.getLogger("Minecraft");
 	}
 
 	@Override
@@ -779,7 +779,7 @@ public class FakeServer implements Server
 			{
 				throw new UnsupportedOperationException("Not supported yet.");
 			}
-		};
+		};		
 	}
 
 	@Override

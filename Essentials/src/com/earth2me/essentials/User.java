@@ -12,7 +12,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -40,7 +39,7 @@ public class User extends UserData implements Comparable<User>, IReplyTo, net.es
 	private boolean invSee = false;
 	private boolean recipeSee = false;
 	private boolean enderSee = false;
-	private static final Logger logger = Bukkit.getLogger();
+	private static final Logger logger = Logger.getLogger("Minecraft");
 
 	User(final Player base, final IEssentials ess)
 	{

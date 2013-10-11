@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -19,7 +18,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class EssentialsEntityListener implements Listener
 {
-	private static final Logger LOGGER = Bukkit.getLogger();
+	private static final Logger LOGGER = Logger.getLogger("Minecraft");
 	private final IEssentials ess;
 	private static final transient Pattern powertoolPlayer = Pattern.compile("\\{player\\}");
 

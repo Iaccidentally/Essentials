@@ -5,12 +5,14 @@ import com.earth2me.essentials.commands.NotEnoughArgumentsException;
 import java.io.File;
 import java.math.BigDecimal;
 import java.util.Locale;
+import java.util.logging.Logger;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 
 public class Worth implements IConf
 {
+	private static final Logger logger = Logger.getLogger("Minecraft");
 	private final EssentialsConf config;
 
 	public Worth(File dataFolder)
@@ -36,7 +38,7 @@ public class Worth implements IConf
 		if (result.signum() < 0)
 		{
 			result = config.getBigDecimal("worth." + itemStack.getTypeId() + "." + itemStack.getDurability(), BigDecimal.ONE.negate());
-		}
+		}		
 		if (result.signum() < 0)
 		{
 			result = config.getBigDecimal("worth." + itemStack.getTypeId() + ".0", BigDecimal.ONE.negate());
@@ -44,7 +46,7 @@ public class Worth implements IConf
 		if (result.signum() < 0)
 		{
 			result = config.getBigDecimal("worth." + itemStack.getTypeId(), BigDecimal.ONE.negate());
-		}
+		}		
 		if (result.signum() < 0)
 		{
 			result = config.getBigDecimal("worth-" + itemStack.getTypeId(), BigDecimal.ONE.negate());
