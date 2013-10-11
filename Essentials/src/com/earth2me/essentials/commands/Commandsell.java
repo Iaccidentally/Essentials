@@ -89,7 +89,7 @@ public class Commandsell extends EssentialsCommand
 			}
 			return BigDecimal.ZERO;
 		}
-		
+
 		BigDecimal result = worth.multiply(BigDecimal.valueOf(amount));
 
 		//TODO: Prices for Enchantments
@@ -105,7 +105,7 @@ public class Commandsell extends EssentialsCommand
 		Trade.log("Command", "Sell", "Item", user.getName(), new Trade(ris, ess), user.getName(), new Trade(result, ess), user.getLocation(), ess);
 		user.giveMoney(result);
 		user.sendMessage(_("itemSold", NumberUtil.displayCurrency(result, ess), amount, is.getType().toString().toLowerCase(Locale.ENGLISH), NumberUtil.displayCurrency(worth, ess)));
-		logger.log(Level.INFO, _("itemSoldConsole", user.getDisplayName(), is.getType().toString().toLowerCase(Locale.ENGLISH), NumberUtil.displayCurrency(result, ess), amount, NumberUtil.displayCurrency(worth, ess)));
+		ess.getLogger().log(Level.INFO, _("itemSoldConsole", user.getDisplayName(), is.getType().toString().toLowerCase(Locale.ENGLISH), NumberUtil.displayCurrency(result, ess), amount, NumberUtil.displayCurrency(worth, ess)));
 		return result;
 	}
 }

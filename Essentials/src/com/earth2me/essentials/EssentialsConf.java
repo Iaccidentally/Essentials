@@ -32,7 +32,7 @@ import org.bukkit.util.Vector;
 
 public class EssentialsConf extends YamlConfiguration
 {
-	private static final Logger LOGGER = Logger.getLogger("Minecraft");
+	private static final Logger LOGGER = Bukkit.getLogger();
 	private final File configFile;
 	private String templateName = null;
 	private Class<?> resourceClass = EssentialsConf.class;
@@ -337,7 +337,7 @@ public class EssentialsConf extends YamlConfiguration
 			{
 				if (pendingDiskWrites.get() > 1)
 				{
-					// Writes can be skipped, because they are stored in a queue (in the executor). 
+					// Writes can be skipped, because they are stored in a queue (in the executor).
 					// Only the last is actually written.
 					pendingDiskWrites.decrementAndGet();
 					//LOGGER.log(Level.INFO, configFile + " skipped writing in " + (System.nanoTime() - startTime) + " nsec.");
@@ -495,7 +495,7 @@ public class EssentialsConf extends YamlConfiguration
 	{
 		return get(path);
 	}
-	
+
 	public void setProperty(final String path, final BigDecimal bigDecimal)
 	{
 		set(path, bigDecimal.toString());
@@ -522,14 +522,14 @@ public class EssentialsConf extends YamlConfiguration
 	{
 		return super.get(path, def);
 	}
-	
-	
+
+
 	public synchronized BigDecimal getBigDecimal(final String path, final BigDecimal def)
 	{
 		final String input = super.getString(path);
 		return toBigDecimal(input, def);
 	}
-	
+
 	public static BigDecimal toBigDecimal(final String input, final BigDecimal def)
 	{
 		if (input == null || input.isEmpty())

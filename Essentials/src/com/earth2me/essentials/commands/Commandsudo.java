@@ -4,7 +4,6 @@ import static com.earth2me.essentials.I18n._;
 import com.earth2me.essentials.User;
 import java.util.Locale;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
@@ -17,7 +16,6 @@ public class Commandsudo extends EssentialsCommand
 	{
 		super("sudo");
 	}
-	private static final Logger LOGGER = Logger.getLogger("Minecraft");
 
 	@Override
 	public void run(final Server server, final CommandSender sender, final String commandLabel, final String[] args) throws Exception
@@ -60,8 +58,8 @@ public class Commandsudo extends EssentialsCommand
 						@Override
 						public void run()
 						{
-							LOGGER.log(Level.INFO, String.format("[Sudo] %s issued server command: /%s %s", user.getName(), command, getFinalArg(arguments, 0)));
-							execCommand.execute(user.getBase(), command, arguments);							
+							ess.getLogger().log(Level.INFO, String.format("[Sudo] %s issued server command: /%s %s", user.getName(), command, getFinalArg(arguments, 0)));
+							execCommand.execute(user.getBase(), command, arguments);
 						}
 					});
 		}

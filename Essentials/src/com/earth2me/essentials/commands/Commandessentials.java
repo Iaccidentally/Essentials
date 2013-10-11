@@ -201,7 +201,7 @@ public class Commandessentials extends EssentialsCommand
 		{
 			for(String s : consoleMoo)
 			{
-				logger.info(s);
+				ess.getLogger().info(s);
 			}
 			for(Player player : ess.getServer().getOnlinePlayers())
 			{

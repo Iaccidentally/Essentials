@@ -15,6 +15,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
@@ -340,7 +341,7 @@ public class Trade
 			}
 			catch (IOException ex)
 			{
-				Logger.getLogger("Minecraft").log(Level.SEVERE, null, ex);
+				ess.getLogger().log(Level.SEVERE, null, ex);
 			}
 		}
 		StringBuilder sb = new StringBuilder();
@@ -428,7 +429,7 @@ public class Trade
 		}
 		catch (IOException ex)
 		{
-			Logger.getLogger("Minecraft").log(Level.SEVERE, null, ex);
+			ess.getLogger().log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -442,7 +443,7 @@ public class Trade
 			}
 			catch (IOException ex)
 			{
-				Logger.getLogger("Minecraft").log(Level.SEVERE, null, ex);
+				Bukkit.getLogger().log(Level.SEVERE, null, ex);
 			}
 			fw = null;
 		}

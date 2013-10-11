@@ -20,7 +20,6 @@ import java.io.File;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -31,7 +30,6 @@ public class Economy
 	public Economy()
 	{
 	}
-	private static final Logger logger = Logger.getLogger("Minecraft");
 	private static IEssentials ess;
 	private static final String noCallBeforeLoad = "Essentials API is called before Essentials is loaded.";
 	public static final MathContext MATH_CONTEXT = MathContext.DECIMAL128;
@@ -72,7 +70,7 @@ public class Economy
 		{
 			if (!config.delete())
 			{
-				logger.log(Level.WARNING, _("deleteFileError", config));
+				ess.getLogger().log(Level.WARNING, _("deleteFileError", config));
 			}
 			ess.getUserMap().removeUser(name);
 		}
@@ -127,7 +125,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to set balance of " + name + " to " + balance + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to set balance of " + name + " to " + balance + ": " + e.getMessage(), e);
 		}
 	}
 
@@ -166,7 +164,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to add " + amount + " to balance of " + name + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to add " + amount + " to balance of " + name + ": " + e.getMessage(), e);
 		}
 	}
 
@@ -193,7 +191,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to substract " + amount + " of balance of " + name + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to substract " + amount + " of balance of " + name + ": " + e.getMessage(), e);
 		}
 	}
 
@@ -220,7 +218,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to divide balance of " + name + " by " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to divide balance of " + name + " by " + amount + ": " + e.getMessage(), e);
 		}
 	}
 
@@ -247,7 +245,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to multiply balance of " + name + " by " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to multiply balance of " + name + " by " + amount + ": " + e.getMessage(), e);
 		}
 	}
 
@@ -288,7 +286,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
 			return false;
 		}
 	}
@@ -313,7 +311,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
 			return false;
 		}
 	}
@@ -338,7 +336,7 @@ public class Economy
 		}
 		catch (ArithmeticException e)
 		{
-			logger.log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to compare balance of " + name + " with " + amount + ": " + e.getMessage(), e);
 			return false;
 		}
 	}
@@ -375,7 +373,7 @@ public class Economy
 		}
 		catch (NumberFormatException e)
 		{
-			logger.log(Level.WARNING, "Failed to display " + amount + ": " + e.getMessage(), e);
+			ess.getLogger().log(Level.WARNING, "Failed to display " + amount + ": " + e.getMessage(), e);
 			return "NaN";
 		}
 	}

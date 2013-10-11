@@ -4,7 +4,6 @@ import net.ess3.api.IEssentials;
 import com.earth2me.essentials.User;
 import com.earth2me.essentials.utils.FormatUtil;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -18,7 +17,6 @@ import org.bukkit.event.block.*;
 public class SignBlockListener implements Listener
 {
 	private final transient IEssentials ess;
-	private final static Logger LOGGER = Logger.getLogger("Minecraft");
 	private final static Material WALL_SIGN = Material.WALL_SIGN;
 	private final static Material SIGN_POST = Material.SIGN_POST;
 
@@ -47,7 +45,7 @@ public class SignBlockListener implements Listener
 		// prevent any signs be broken by destroying the block they are attached to
 		if (EssentialsSign.checkIfBlockBreaksSigns(block))
 		{
-			LOGGER.log(Level.INFO, "Prevented that a block was broken next to a sign.");
+			ess.getLogger().log(Level.INFO, "Prevented that a block was broken next to a sign.");
 			return true;
 		}
 
@@ -71,7 +69,7 @@ public class SignBlockListener implements Listener
 			if (sign.areHeavyEventRequired() && sign.getBlocks().contains(block.getType())
 				&& !sign.onBlockBreak(block, player, ess))
 			{
-				LOGGER.log(Level.INFO, "A block was protected by a sign.");
+				ess.getLogger().log(Level.INFO, "A block was protected by a sign.");
 				return true;
 			}
 		}
