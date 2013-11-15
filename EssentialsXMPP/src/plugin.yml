@@ -1,13 +1,12 @@
 # This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
 name: EssentialsXMPP
-main: com.earth2me.essentials.xmpp.EssentialsXMPP
+main: net.ess3.xmpp.EssentialsXMPP
 # Note to developers: This next line cannot change, or the automatic versioning system will break.
-version: TeamCity
-website: http://ess.khhq.net/wiki/XMPP
+version: ${build.number}
+website: http://tiny.cc/EssentialsWiki
 description: Provides xmpp communication.
-authors:
-  - snowleo
-depend: [Essentials]
+authors: ["Essentials Team", "http://contributors.ess3.net"]
+depend: [Essentials-3]
 commands:
   setxmpp:
     description: set your xmpp address

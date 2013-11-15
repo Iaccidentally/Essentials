@@ -1,10 +1,11 @@
 # This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
 name: EssentialsUpdate
-main: com.earth2me.essentials.update.EssentialsUpdate
+main: net.ess3.update.EssentialsUpdate
 # Note to developers: This next line cannot change, or the automatic versioning system will break.
-version: TeamCity
+version: ${build.number}
 description: This plugin allows to install or update all Essentials plugins
-authors: [snowleo]
+website: http://tiny.cc/EssentialsWiki
+authors: ["Essentials Team", "http://contributors.ess3.net"]
 commands:
   essentialsupdate:
     description: Install or update the Essentials plugins.

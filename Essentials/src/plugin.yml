@@ -1,18 +1,18 @@
 # This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
-name: Essentials
-main: com.earth2me.essentials.Essentials
+name: Essentials-3
+main: net.ess3.bukkit.BukkitPlugin
 # Note to developers: This next line cannot change, or the automatic versioning system will break.
-version: TeamCity
-website: http://tiny.cc/EssentialsCommands
+version: ${build.number}
+website: http://tiny.cc/EssentialsWiki
 description: Provides an essential, core set of commands for Bukkit.
-authors: [Zenexer, ementalo, Aelux, Brettflan, KimKandor, snowleo, ceulemans, Xeology, KHobbits, md_5, Iaccidentally]
+authors: ["Essentials Team", "http://contributors.ess3.net"]
 commands:
   afk:
     description: Marks you as away-from-keyboard.
     usage: /<command>
     aliases: [eafk]
   antioch:
-    description: 'A little surprise for operators.'
+    description: A little surprise for operators.
     usage: /<command> [message]
     aliases: [eantioch,grenade,tnt,egrenade,etnt]
   back:
@@ -29,7 +29,7 @@ commands:
     aliases: [bal,money,emoney,ebalance,ebal]
   balancetop:
     description: Gets the top balance values.
-    usage: /<command> <page>
+    usage: /<command> [pagenumber|hide [player]|force]
     aliases: [baltop,ebaltop,ebalancetop]
   ban:
     description: Bans a player.
@@ -39,6 +39,10 @@ commands:
     description: Bans an IP address.
     usage: /<command> <address>
     aliases: [ebanip]
+  book:
+    description: Allows reopening and editing of sealed books.
+    usage: /<command> [title|author [name]]
+    aliases: [ebook]
   break:
     description: Breaks the block you are looking at.
     usage: /<command>
@@ -87,6 +91,10 @@ commands:
     description: Enchants the item the user is holding.
     usage: /<command> <enchantmentname> [level]
     aliases: [enchantment,eenchant,eenchantment]
+  enderchest:
+    description: Lets you see inside an enderchest.
+    usage: /<command> [player]
+    aliases: [endersee,echest,eenderchest,eendersee,eechest]
   essentials:
     description: Reloads essentials.
     usage: /<command>
@@ -113,8 +121,12 @@ commands:
     aliases: [eitemdb,itemno,eitemno,durability,dura,edura,edurability]
   fireball:
     description: Throw a fireball.
-    usage: /<command> [small]
-    aliases: [efireball]
+    usage: /<command> [small|skull]
+    aliases: [efireball,fireskull,efireskull,fireentity,efireentity]
+  firework:
+    description: Allows you to modify a stack of fireworks.
+    usage: /<command> <<meta param>|power [amount]|clear|fire [amount]>
+    aliases: [efirework]
   gamemode:
     description: Change player gamemode.
     usage: /<command> [player]
@@ -137,7 +149,7 @@ commands:
     aliases: [tgm,godmode,egod,etgm,egodmode]
   hat:
     description: Get some cool new headgear
-    usage: /<command>
+    usage: /<command> [remove]
     aliases: [ehat]
   heal:
     description: Heals you or the given player.
@@ -157,7 +169,7 @@ commands:
     aliases: [ehome,homes,ehomes]
   ignore:
     description: Ignore other players.
-    usage: /<command> <player>
+    usage: /<command> <player|list>
     aliases: [eignore]
   info:
     description: Shows information set by the server owner
@@ -220,7 +232,7 @@ commands:
     aliases: [action,describe,eme,eaction,edescribe]
   more:
     description: Fills the item stack in hand to maximum size.
-    usage: /<command>
+    usage: /<command> [all]
     aliases: [emore]
   motd:
     description: Views the Message Of The Day.
@@ -274,6 +286,10 @@ commands:
     description: Displays the username of a user based on nick.
     usage: /<command> <nickname>
     aliases: [erealname]
+  recipe:
+    description: Displays how to craft items.
+    usage: /<command> <item> [number]
+    aliases: [erecipe]
   remove:
     description: Removes entities in your world
     usage: /<command> <drops|arrows|boats|minecarts|xp|paintings> [radius]
@@ -302,6 +318,10 @@ commands:
     description: Creates a jail where you specified named [jailname]
     usage: /<command> <jailname>
     aliases: [esetjail]
+  setspawn:
+    description: Set the spawnpoint to your current position.
+    usage: /<command> <group>
+    aliases: [esetspawn]
   setwarp:
     description: Creates a new warp.
     usage: /<command> <warp>
@@ -312,8 +332,12 @@ commands:
     aliases: [esetworth]
   socialspy:
     description: Toggles if you can see msg/mail commands in chat.
-    usage: /<command>
+    usage: /<command> [player] [on|off]
     aliases: [esocialspy]
+  spawn:
+    description: Teleport to the spawnpoint.
+    usage: /<command> [player]
+    aliases: [espawn]
   spawner:
     description: Change the mob type of a spawner
     usage: /<command> <mob>
@@ -322,6 +346,10 @@ commands:
     description: Spawns a mob.
     usage: /<command> <mob>[:data][,<mount>[:data]] [amount] [player]
     aliases: [espawnmob,mob,emob]
+  speed:
+    description: Change your speed limits
+    usage: /<command> <speed> [player]
+    aliases: [flyspeed,walkspeed,fspeed,wspeed,eflyspeed,ewalkspeed,efspeed,ewspeed,espeed]
   sudo:
     description: Make another user perform a command.
     usage: /<command> <player> <command [args]>
@@ -369,7 +397,7 @@ commands:
   tpahere:
     description: Request that the specified player teleport to you.
     usage: /<command> <player>
-    aliases: [etpahere]
+    aliases: [come,etpahere,ecome]
   tpall:
     description: Teleport all online players to another player.
     usage: /<command> <player>
@@ -416,7 +444,7 @@ commands:
     aliases: [eunlimited,ul,unl,eul,eunl]
   vanish:
     description: Hide yourself from other players.
-    usage: /<command>
+    usage: /<command> [on|off]
     aliases: [evanish]
   warp:
     description: List all warps or warp to the specified location.
@@ -430,6 +458,10 @@ commands:
     description: Determine the username behind a nickname.
     usage: /<command> <nickname>
     aliases: [ewhois]
+  workbench:
+    description: Opens up a workbench
+    usage: /<command>
+    aliases: [eworkbench,wb,ewb,wbench,ewbench,craft,ecraft]
   world:
     description: Switch between worlds.
     usage: /<command> [world]

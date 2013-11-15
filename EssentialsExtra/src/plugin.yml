@@ -1,0 +1,9 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: EssentialsExtra
+main: net.ess3.extra.EssentialsExtra
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: ${build.number}
+website: http://tiny.cc/EssentialsWiki
+description: Provides extra commands for Essentials
+authors: ["Essentials Team", "http://contributors.ess3.net"]
+depend: [Essentials-3]

@@ -1,0 +1,9 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: EssentialsSigns
+main: net.ess3.signs.EssentialsSignsPlugin
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: ${build.number}
+website: http://tiny.cc/EssentialsWiki
+description: Provides signs, utilizing Essentials.
+authors: ["Essentials Team", "http://contributors.ess3.net"]
+depend: [Essentials-3]
